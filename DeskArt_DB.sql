@@ -16,8 +16,8 @@ CREATE TABLE Usuario (
     email VARCHAR(65)
 );
 
-CREATE TABLE 羠ea (
-    id羠ea INT PRIMARY KEY,
+CREATE TABLE 脕rea (
+    id脕rea INT PRIMARY KEY,
     tipo VARCHAR(45)
 );
 
@@ -30,8 +30,8 @@ CREATE TABLE UsuarioTienda (
     contrasenia VARCHAR(65),
     telefono VARCHAR(65),
     email VARCHAR(65),
-    羠ea_id羠ea INT,
-    FOREIGN KEY (羠ea_id羠ea) REFERENCES 羠ea(id羠ea)
+    脕rea_id脕rea INT,
+    FOREIGN KEY (脕rea_id脕rea) REFERENCES 脕rea(id脕rea)
 );
 
 CREATE TABLE Producto (
@@ -39,9 +39,7 @@ CREATE TABLE Producto (
     alto VARCHAR(65),
     largo VARCHAR(65),
     ancho VARCHAR(65),
-    precio VARCHAR(65),
-    羠ea_id羠ea INT,
-    FOREIGN KEY (羠ea_id羠ea) REFERENCES 羠ea(id羠ea)
+    precio VARCHAR(65)
 );
 
 
@@ -63,7 +61,7 @@ CREATE TABLE Receta (
 CREATE TABLE Merma (
     idMerma INT PRIMARY KEY,
     cantidad INT,
-    descripci髇 VARCHAR(45),
+    descripci贸n VARCHAR(45),
     MateriaP_idMateriaP INT,
     UsuarioTienda_idUsuarioTienda INT,
     FOREIGN KEY (MateriaP_idMateriaP) REFERENCES MateriaP(idMateriaP),
@@ -103,7 +101,7 @@ CREATE TABLE CompraProd (
 
 CREATE TABLE CompraTotal (
     idCompra INT PRIMARY KEY,
-    descripci髇 TEXT,
+    descripci贸n TEXT,
     total FLOAT,
     CompraProd_idCompraProd INT,
     FOREIGN KEY (CompraProd_idCompraProd) REFERENCES CompraProd(idCompraProd)
@@ -131,11 +129,11 @@ CREATE TABLE VentaTotal (
 
 CREATE TABLE EstadoProduc (
     idEstadoProduc INT PRIMARY KEY,
-    descripci髇 VARCHAR(45)
+    descripci贸n VARCHAR(45)
 );
 
-CREATE TABLE Producci髇 (
-    idProducci髇 INT PRIMARY KEY,
+CREATE TABLE Producci贸n (
+    idProducci贸n INT PRIMARY KEY,
     VentaTotal_idVentaTotal INT,
     EstadoProduc_idEstadoProduc INT,
     FOREIGN KEY (VentaTotal_idVentaTotal) REFERENCES VentaTotal(idVentaTotal),
@@ -149,5 +147,5 @@ CREATE TABLE [dbo].[LoginMobil] (
     [contrasena] NVARCHAR(100) NOT NULL,
     [sexo] CHAR(1) NOT NULL,
     [direccion] NVARCHAR(255) NOT NULL,
-    [cp] NVARCHAR(10)燦OT燦ULL
+    [cp] NVARCHAR(10)聽NOT聽NULL
 );
