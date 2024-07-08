@@ -1,3 +1,5 @@
+Drop database DeskArt;
+
 create database DeskArt;
 
 use DeskArt;
@@ -36,10 +38,13 @@ CREATE TABLE UsuarioTienda (
 
 CREATE TABLE Producto (
     idProducto INT PRIMARY KEY,
+	nombre VARCHAR(65),
+	descripcion text,
     alto VARCHAR(65),
     largo VARCHAR(65),
     ancho VARCHAR(65),
-    precio VARCHAR(65)
+    precio VARCHAR(65),
+	imagen text
 );
 
 
